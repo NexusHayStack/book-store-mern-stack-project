@@ -17,14 +17,9 @@ const categories = ["Choose a genre", "Business", "Fiction", "Horror", "Adventur
 
 const TopSellers = () => {
     
-    const [books, setBooks] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("Choose a genre");
 
-    useEffect(() => {
-        fetch("books.json")
-            .then(res => res.json())
-            .then((data) => setBooks(data))
-    }, []);
+    const {data: books = []} = useFetchAllBooksQuery();
   
     const filteredBooks = selectedCategory === "Choose a genre" ? books : books.filter(book => book.category === selectedCategory.toLowerCase())
 

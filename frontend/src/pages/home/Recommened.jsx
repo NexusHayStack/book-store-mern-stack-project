@@ -14,7 +14,6 @@ import { useFetchAllBooksQuery } from '../../redux/features/books/booksApi';
 
 
 const Recommened = () => {
-   
 
     const {data: books = []} = useFetchAllBooksQuery();
   return (

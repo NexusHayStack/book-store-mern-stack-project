@@ -23,4 +23,5 @@ const booksApi = createApi({
     })
 });
 
-export const {useFetchAllBooksQuery} = booksApi
+export const {useFetchAllBooksQuery} = booksApi;
+export default booksApi;
